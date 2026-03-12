@@ -218,12 +218,13 @@ async def get_groups(
 
     result = await session.execute(stmt)
     rows = result.all()
+# meow 
 
     return [
         {
-            "group": row.group,
-            "avg_score": round(float(row.avg_score) if row.avg_score else 0, 1),
-            "students": row.students
+            "group": r.group,
+            "avg_score": round(float(r.avg_score) if r.avg_score else 0, 1),
+            "students": r.students
         }
-        for row in rows
+        for r in rows
     ]
